@@ -8,6 +8,8 @@ import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import { CartProvider } from "./contexts/CartContext";
 import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
+import Order from "./pages/Order";
 
 const ContainerTop = styled(Container)`
   padding: 20px;
@@ -26,6 +28,12 @@ const App = () => {
             </Route>
             <Route path="/cart">
               <Cart />
+            </Route>
+            <Route path="/check-out">
+              <Checkout />
+            </Route>
+            <Route path="/orders/:code">
+              <Order />
             </Route>
           </Switch>
         </ContainerTop>

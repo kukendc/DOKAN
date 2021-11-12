@@ -25,6 +25,22 @@ const NavBar = () => {
   const classes = useStyles();
   const { cart } = React.useContext(CartContext);
 
+  const renderCart = () => {
+    if (cart.itemsCount !== 0) {
+      return (
+        <Link to={"/cart"} className={classes.link}>
+          <Badge badgeContent={cart.itemsCount} color="error">
+            <ShoppingCartIcon />
+          </Badge>
+        </Link>
+      );
+    } else
+      return (
+        <Badge badgeContent={cart.itemsCount} color="error">
+          <ShoppingCartIcon />
+        </Badge>
+      );
+  };
   return (
     <AppBar position="static">
       <Toolbar>
@@ -39,11 +55,7 @@ const NavBar = () => {
             Home
           </Link>
         </Typography>
-        <Link to={"/cart"} className={classes.link}>
-          <Badge badgeContent={cart.itemsCount} color="error">
-            <ShoppingCartIcon />
-          </Badge>
-        </Link>
+        {renderCart()}
       </Toolbar>
     </AppBar>
   );

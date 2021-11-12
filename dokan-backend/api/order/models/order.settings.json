@@ -14,15 +14,18 @@
   "attributes": {
     "firstname": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": false
     },
     "lastname": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": false
     },
     "email": {
       "type": "email",
-      "required": true
+      "required": true,
+      "unique": false
     },
     "phone": {
       "type": "string"

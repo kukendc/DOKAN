@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Grid from "@mui/material/Grid";
 import ProductCard from "../components/ProductCard";
-import { fetchProductCart } from "../services/api";
+import { fetchProducts } from "../services/api";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await fetchProductCart();
+        const data = await fetchProducts();
         setProducts(data);
       } catch (e) {
         console.log(e);
